@@ -1,0 +1,250 @@
+{
+    "pizzeria": {
+      "description": "Вы доставщик пиццы из пиццерии «Pizza&Hub». Вам нужно срочно доставить пиццу заказчику, но для начала выберите транспорт для передвижания:",
+      "image": "image/pizzeria.png",
+      "actions": {
+        "Выбрать велосипед": "equip_bike",
+        "Выбрать электросамокат": "equip_scooter"
+      }
+    },
+    "equip_bike": {
+      "description": "Вы выбрали велосипед",
+      "image": "image/equip_bike.png",
+      "actions": {
+        "Продолжить": "street"
+      },
+      "def": "equip_bike(p_id)"
+    },
+    "equip_scooter": {
+      "description": "Вы выбрали электросамокат",
+      "image": "image/equip_scooter.png",
+      "actions": {
+        "Продолжить": "street"
+      },
+      "def": "equip_scooter(p_id)"
+    },
+    "street": {
+      "description": "Выйдя из заведения с пиццей, вы решаете как проложить свой путь:",
+      "image": "image/street.png",
+      "actions": {
+        "Поторопиться": "hurry",
+        "Продолжить движение не спеша": "slowly"
+      }
+    },
+    "hurry": {
+      "description": "Вы решаете поторопиться. Выберите вариант развития событий:",
+      "image": "image/question.png",
+      "actions": {
+        "Вариант 1?": "park",
+        "Вариант 2?": "loss"
+      }
+    },
+    "loss": {
+      "description": "Вы сбились с пути!\nПроигрыш",
+      "image": "image/Lost_my_way.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      },
+      "def": "count_loss(p_id)"
+    },
+    "park": {
+      "description": "ВЫ сейчас находитесь в парке. У Вас имеется время в запасе, вы решаете чуть сбавить скорость. Но по пути вам встречается стая голодных собачек. Они учуяли запах пиццы и побежали за вами. Ваши действия:",
+      "image": "image/park.png",
+      "actions": {
+        "Попытаетесь сделать ноги": "run",
+        "Представите себе что вы супергерой и попытайтесь защититься": "protect"
+      }
+    },
+    "run": {
+      "description": "Оторвавшись от погони, вы приезжайте к адресу, но никто не отвечает в домофон. Как вы поступите:",
+      "image": "image/entrance.png",
+      "actions": {
+        "Немного подождете": "final_1",
+        "Развернетесь и уйдете": "leave"
+      }
+    },
+    "final_1": {
+      "description": "Вы дождались. Оказывается заказчик только вернулся с работы, но немного сам опоздал.\nВы выиграли!",
+      "image": "image/wait.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      }
+    },
+
+
+    "leave": {
+      "description": "Вы разворачиваетесь и уходите. Выберите действие как вы поступите:?",
+      "image": "image/question.png",
+      "actions": {
+        "Действие 1?": "canceling_the_order",
+        "Действие 2?": "final_2"
+      }
+    },
+    "final_2": {
+      "description": "Вы так и не дождались заказчика и решаете оставить пиццу в коридоре у входа в квартиру заказчика с запиской.\nВы выиграли!",
+      "image": "image/leave.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      }
+    },
+    "canceling_the_order": {
+      "description": "Вы так и не дождались заказчика и решаете отменить заказ.\nПроигрыш!",
+      "image": "image/upset.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      },
+      "def": "count_loss(p_id)"
+    },
+
+
+    "protect": {
+      "description": "Представив себе что вы супергерой ️, попытайтесь защититься. Выберите вариант развития событий",
+      "image": "image/superhiro.png",
+      "actions": {
+        "Вариант 1?": "losing_scooter_discharge",
+        "Вариант 2?": "pizza_loss"
+      }
+    },
+    "losing_scooter_discharge": {
+      "description": "При попытке сбежать вы спотыкаетесь и падаете. Проигрыш!",
+      "image": "image/stumble.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      },
+      "def": "count_loss(p_id)"
+    },
+    "pizza_loss": {
+      "description": "Осознав, что это бессмысленно вы делаете ноги, но одной собачке все-таки удается стащить пиццу.",
+      "image": "image/angry_2.png",
+      "actions": {
+        "Продолжить": "think"
+      }
+    },
+    "think": {
+      "description": "Оторвавшись от погони, вы останавливайтесь и размышляете, а затем принимаете решение:",
+      "image": "image/reflection.png",
+      "actions": {
+        "Отменить заказ": "canceling_the_order_2",
+        "Привезти не полный заказ": "bring"
+      }
+    },
+    "canceling_the_order_2": {
+      "description": "Вы отменяете заказ, сославшись на непредвиденные обстоятельства.\nПроигрыш!",
+      "image": "image/upset_2.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      },
+      "def": "count_loss(p_id)"
+    },
+    "bring": {
+      "description": "Вы приезжайте по адресу к заказчику. Выберите вариант событий:",
+      "image": "entrance.png",
+      "actions": {
+        "Вариант 1?": "final_3",
+        "Вариант 2?": "rejection"
+      }
+    },
+    "rejection": {
+      "description": "Заказчик отказался оплачивать за половину заказа.\nПроигрыш",
+      "image": "image/upset.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      },
+      "def": "count_loss(p_id)"
+    },
+    "final_3": {
+      "description": "Объяснив ситуацию, заказчик все-таки решается оплатить заказ, пожалев доставщика.\nВыигрыш!",
+      "image": "image/Lost_my_way.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      }
+    },
+
+
+    "slowly": {
+      "description": "Продолжая движение не спеша у вас сейчас развернется два варианта событий:",
+      "image": "image/question.png",
+      "actions": {
+        "Вариант 1?": "hide",
+        "Вариант 2?": "resume"
+      }
+    },
+    "hide": {
+      "description": "Проигрыш. Доставщик скрылся и пропал.\nПроигрыш!",
+      "image": "image/city.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      },
+      "def": "count_loss(p_id)"
+    },
+    "resume": {
+      "description": "Продолжая движение вы решаете попробовать ускориться, и выбираете по какой дороге лучше проехать:?",
+      "image": "image/reflection.png",
+      "actions": {
+        "По тротуару": "sidewalk",
+        "По автодороге": "road"
+      }
+    },
+    "sidewalk": {
+      "description": "Продолжайте двигаться как изначально.",
+      "image": "image/sidewalk.png",
+      "actions": {
+        "Продолжить": "decision"
+      }
+    },
+    "road": {
+      "description": "Продолжайте двигаться по автодороге.",
+      "image": "image/road.png",
+      "actions": {
+        "Продолжить": "decision"
+      }
+    },
+    "decision": {
+      "description": "Вы достигаете практически до заданного пункта, но у вас мало времени, и поэтому вы решаете:",
+      "image": "image/question.png",
+      "actions": {
+        "Вы сокращаете путь": "on_time",
+        "Вы продолжаете путь": "miss"
+      }
+    },
+    "on_time": {
+      "description": "Вы приезжайте по адресу к заказчику.",
+      "image": "image/entrance.png",
+      "actions": {
+        "?": "final_4"
+      }
+    },
+    "final_4": {
+      "description": "Вы отдаете раньше заказ, из-за чего пицца еще теплая. Заказчик угощает вас кусочком пиццы.\nВыигрыш!",
+      "image": "image/win.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      }
+    },
+
+
+    "miss": {
+      "description": "Вы приезжайте по адресу к заказчику, но при этом запаздываете на 10 минут. Выберите вариант развиттия событий:",
+      "image": "image/reflection.png",
+      "actions": {
+        "Вариант 1?": "rejection_2",
+        "Вариант 2?": "accepts_2"
+      }
+    },
+    "rejection_2": {
+      "description": "Вы отдаете пиццу, но не вовремя, поэтому вы оплачиваете ему заказ.\nПроигрыш!",
+      "image": "image/angry_2.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      },
+      "def": "count_loss(p_id)"
+    },
+    "accepts_2": {
+      "description": "Заказчик все-таки принимает у вас пиццу, хотя и с опозданием.\nВыигрыш!",
+      "image": "image/final_2.png",
+      "actions": {
+        "Начать сначала": "pizzeria"
+      }
+    }
+}
+
