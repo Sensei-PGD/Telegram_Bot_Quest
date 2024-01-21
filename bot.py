@@ -97,15 +97,11 @@ def send_info(p_id):
 def check_bike(p_id):
     if 'bike' in players[p_id]['transport']:
         players[p_id]['location'] = "pizzeria"
-    else:
-        players[p_id]['location'] = "bike"
 
 
 def check_scooter(p_id):
     if 'scooter' in players[p_id]['transport']:
         players[p_id]['location'] = "pizzeria"
-    else:
-        players[p_id]['location'] = "scooter"
 
 
 # Выбрать велосипед
