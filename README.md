@@ -52,7 +52,7 @@
 - файл **bot.py**, в котором реализованы все функции бота 
 - бот считывает ник пользователя и обращается по нему
 - кнопки для выбора ответа
-Структура бота с функциями: ![Структура бота с функциями]()  
+Структура бота с функциями: ![Структура бота с функциями](https://github.com/Sensei-PGD/Telegram_Bot_Quest/blob/main/schemes/Bot_structure_functions.jpg)  
 ### **3. Принцип работы бота** 
 Принцип работы бота: ![Принцип работы бота](https://github.com/Sensei-PGD/Telegram_Bot_Quest/blob/main/schemes/How_the_bot_works.jpg)    
 
