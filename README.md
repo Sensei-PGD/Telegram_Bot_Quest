@@ -82,4 +82,5 @@
 - Подключаем токен в bot.py и проверяем нашего бота. 
 
 ## **Источники**
-[Ссылка на телеграмм-бота](https://t.me/Anumi_assistent_bot)
+- [Ссылка на телеграмм-бота](https://t.me/Anumi_assistent_bot)
+- [Ссылка на облако с изображениями](https://disk.yandex.ru/d/nOqjwEqlcGkz0g) 
